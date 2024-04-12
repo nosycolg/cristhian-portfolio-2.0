@@ -79,16 +79,14 @@ function Profile() {
 
   return (
     <>
-      <div className="mx-auto grid w-full grid-cols-12 gap-4 p-4 overflow-y-auto">
-        <div className="header col-span-12 rounded-lg  py-8"></div>
-        <div className="col-span-12 sm:col-span-4 rounded-2xl">
-          <img className="w-full rounded-2xl" src={profileIcon} />
+        <div className="items-center grid w-full grid-cols-12 gap-4 p-4 overflow-y-auto">
+          <div className="col-span-12 sm:col-span-4 rounded-2xl">
+            <img className="w-full rounded-2xl" src={profileIcon} />
+          </div>
+          <div className="col-span-12 rounded-lg  sm:col-span-8">
+            <Markdown>{markdownContent}</Markdown>
+          </div>
         </div>
-        <div className="col-span-12 rounded-lg  sm:col-span-8">
-          <Markdown>{markdownContent}</Markdown>
-        </div>
-        <div className="footer col-span-12 rounded-lg p-6"></div>
-      </div>
     </>
   );
 }

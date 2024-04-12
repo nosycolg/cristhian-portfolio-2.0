@@ -3,7 +3,6 @@ import React from "react";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { GithubAPI } from "../../services/api";
-import { AnimatedList } from "react-animated-list";
 
 interface Repository {
   id: number;
@@ -54,7 +53,6 @@ export default function Repositories() {
           role="list"
           className="grid grid-cols-1 gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
         >
-          <AnimatedList animation={"zoom"} initialAnimationDuration={1000}>
             {repositories.map((repository: Repository) => {
               return (
                 <li className="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
@@ -141,7 +139,6 @@ export default function Repositories() {
                 </li>
               );
             })}
-          </AnimatedList>
         </ul>
       </div>
     </>

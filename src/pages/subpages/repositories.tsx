@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { GithubAPI } from "../../services/api";

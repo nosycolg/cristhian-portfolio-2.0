@@ -1,4 +1,3 @@
-import React from "react";
 import profileIcon from "../../assets/profile.jpeg";
 import Markdown from "markdown-to-jsx";
 

@@ -1,6 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import "./index.css";
-import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Repositories from "./pages/subpages/repositories.tsx";

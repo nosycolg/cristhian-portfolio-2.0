@@ -1,4 +1,20 @@
-import { Hash, Calculator, Database, Box, User2Icon, Table, MessageCircle, ImageIcon } from "lucide-react";
+import {
+	Hash,
+	Calculator,
+	Database,
+	Box,
+	User2Icon,
+	Table,
+	MessageCircle,
+	ImageIcon,
+	Gamepad2,
+	Zap,
+	TrendingUp,
+	Gamepad,
+	FileJson,
+	Github,
+	Linkedin,
+} from "lucide-react";
 import { ReactElement } from "react";
 
 import type { Server } from "../types";
@@ -14,6 +30,9 @@ import { TableCreatorTool } from "@/components/Tools/TableCreator";
 import { Projects } from "@/components/Portfolio/Projects";
 import { Experiences } from "@/components/Portfolio/Experiences";
 import { Contacts } from "@/components/Portfolio/Contacts";
+import TetrisGame from "@/components/Games/Tetris";
+import SnakeGame from "@/components/Games/Snake";
+import CrashGame from "@/components/Games/Crash";
 
 function VirtualAssistantComponent(): ReactElement {
 	return VirtualAssistant({
@@ -116,4 +135,43 @@ export const servers: Server[] = [
 			},
 		],
 	},
+	{
+		id: "games",
+		name: "Jogos",
+		icon: Gamepad,
+		color: "#9b59b6",
+		channels: [
+			{ id: "tetris", name: "Tetris", icon: Gamepad2, component: TetrisGame },
+			{ id: "snake", name: "Cobrinha", icon: Zap, component: SnakeGame },
+			{ id: "crash", name: "Crash", icon: TrendingUp, component: CrashGame },
+		],
+	},
 ];
+
+export const serverCategories = {
+	portfolio: servers.find((s) => s.id === "portfolio"),
+	links: [
+		{
+			id: "github",
+			name: "GitHub",
+			icon: Github,
+			href: "https://github.com/nosycolg",
+			subtitle: "@nosycolg",
+		},
+		{
+			id: "linkedin",
+			name: "LinkedIn",
+			icon: Linkedin,
+			href: "https://www.linkedin.com/in/cristhian-dev/",
+			subtitle: "Profissional",
+		},
+		{
+			id: "resume",
+			name: "Currículo",
+			icon: FileJson,
+			href: "https://github.com/nosycolg",
+			subtitle: "Fazer download",
+		},
+	],
+	content: servers.filter((s) => s.id !== "portfolio"),
+};

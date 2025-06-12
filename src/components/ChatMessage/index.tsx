@@ -83,7 +83,6 @@ export function ChatMessage({ channelId, channelName, welcomeMessage }: FileChat
 		}
 	};
 
-	// Cancelar envio da imagem
 	const handleCancelImage = () => {
 		if (imagePreview?.previewUrl) {
 			URL.revokeObjectURL(imagePreview.previewUrl);
@@ -104,7 +103,6 @@ export function ChatMessage({ channelId, channelName, welcomeMessage }: FileChat
 				return;
 			}
 
-			// Criar preview da imagem
 			const previewUrl = URL.createObjectURL(file);
 			setImagePreview({ file, previewUrl });
 		}
@@ -143,7 +141,6 @@ export function ChatMessage({ channelId, channelName, welcomeMessage }: FileChat
 		return Number.parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
 	};
 
-	// Agrupar mensagens por data
 	const groupMessagesByDate = (messages: IChatMessage[]) => {
 		const groups: { [key: string]: IChatMessage[] } = {};
 
